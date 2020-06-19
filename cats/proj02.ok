@@ -1,9 +1,9 @@
 {
     "name": "Project 2: Cats",
-    "endpoint": "cal/cs61a/sp20/proj02",
+    "endpoint": "cal/cs61a/fa19/proj02",
     "src": [
         "utils.py",
-        "cats.py"
+        "typing.py"
     ],
     "tests": {
         "tests/01.py": "ok_test",
@@ -14,8 +14,7 @@
         "tests/06.py": "ok_test",
         "tests/07.py": "ok_test",
         "tests/08.py": "ok_test",
-        "tests/09.py": "ok_test",
-        "tests/10.py": "ok_test"
+        "tests/09.py": "ok_test"
     },
     "protocols": [
         "restore",
