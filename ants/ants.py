@@ -24,7 +24,8 @@ class Place(object):
         self.entrance = None  # A Place
         # Phase 1: Add an entrance to the exit
         # BEGIN Problem 2
-        "*** YOUR CODE HERE ***"
+        if exit is not None:
+            exit.entrance = self
         # END Problem 2
 
     def add_insect(self, insect):
@@ -189,6 +190,7 @@ class HarvesterAnt(Ant):
 
     name = 'Harvester'
     implemented = True
+    food_cost = 2
     # OVERRIDE CLASS ATTRIBUTES HERE
 
     def action(self, colony):
@@ -197,7 +199,7 @@ class HarvesterAnt(Ant):
         colony -- The AntColony, used to access game state information.
         """
         # BEGIN Problem 1
-        "*** YOUR CODE HERE ***"
+        colony.food += 1
         # END Problem 1
 
 
@@ -207,6 +209,7 @@ class ThrowerAnt(Ant):
     name = 'Thrower'
     implemented = True
     damage = 1
+    food_cost = 3
     # ADD/OVERRIDE CLASS ATTRIBUTES HERE
 
     def nearest_bee(self, beehive):
@@ -216,6 +219,8 @@ class ThrowerAnt(Ant):
         This method returns None if there is no such Bee (or none in range).
         """
         # BEGIN Problem 3 and 4
+        self.place = self.place.entrance
+
         return random_or_none(self.place.bees)
         # END Problem 3 and 4
 
